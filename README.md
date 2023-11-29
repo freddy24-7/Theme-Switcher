@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# React Theme Switcher
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application that demonstrates the concept of theming by allowing users to switch between light and dark themes. The application consists of three main components: `App`, `ThemeProvider`, and `ThemeSwitcher`.
 
-## Available Scripts
+## Purpose
 
-In the project directory, you can run:
+The purpose of this application is to showcase how to implement theming in a React application using context and state management. Users can toggle between light and dark themes, and the application's UI will dynamically update to reflect the selected theme.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React:** The application is built using the React JavaScript library, which provides a robust framework for building user interfaces.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Context API:** React's Context API is used to manage the theme state and provide it to the components that need it. This allows for a centralized way of managing and accessing the theme throughout the application.
 
-### `npm test`
+## Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### App
 
-### `npm run build`
+The `App` component serves as the root component of the application. It wraps the entire content in a `ThemeProvider`, which provides the theme-related context to its child components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ThemeProvider
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The `ThemeProvider` component is responsible for managing the current theme state (light or dark) and providing it to the rest of the application. It utilizes React's `useState` hook to manage the theme state and offers a `toggleTheme` function to switch between themes. The current theme value is exposed through the context to be consumed by other components.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ThemeSwitcher
 
-### `npm run eject`
+The `ThemeSwitcher` component is a user interface element that allows users to toggle between light and dark themes. It leverages the `useTheme` custom hook to access the theme context and dynamically updates its appearance based on the selected theme. Clicking the "Toggle Theme" button changes the theme from light to dark and vice versa.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Styling
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application provides default light and dark theme styles through CSS classes. The `light-theme` and `dark-theme` classes define the background colors and text colors for each theme. The `ThemeSwitcher` component applies these classes dynamically based on the current theme.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How to Run
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To run the application locally, follow these steps:
 
-## Learn More
+1. Clone this repository to your local machine.
+2. Navigate to the project directory using the command line.
+3. Install the required dependencies by running `npm install`.
+4. Start the development server with `npm start`.
+5. Open your web browser and access the application at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Feel free to explore the code and experiment with the theme switching functionality.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Enjoy exploring themes with React!
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
